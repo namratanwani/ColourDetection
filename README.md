@@ -55,6 +55,3 @@ From the above results, we can see that 7 out of 10 images are detected successf
 ## Evaluation & Analysis
 The algorithm fails to detect some squares when images are too noisy. To solve this problem, we can create a general solution for all images that extracts coordinates of squares from the ideal (no noise) image and uses those coordinates to detect squares in other images. This way noisy images won’t be depended on their contours. 
 For real photos, we can take advantage of the white background and use the objects with white background only. This can be done by thresholding the image. Also, real images will require a lot of noise removal which can be done by Gaussian blur method. It will also require undistorting the skewed images. Some images are quite already blurred so they may also need to be sharpened. Each image is quite different from each other, hence would require human intervention for appropriate results.
-
-## Conclusion
-In conclusion, we have performed thorough analysis with code in Python to detect colours from the images provided.
