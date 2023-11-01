@@ -1,10 +1,9 @@
-# ColourDetection
-## Colour Detection in Python
+# Colour Detection
 
-# Introduction
+## Introduction
 In image processing, colour detection refers to the process of identifying and extracting colours from an image. The process involves analysing pixels of an image and determining their colour in terms of RGB (red, green, blue) values or other colour spaces such as HSV (hue, saturation, value). It has several applications such as: object recognition, image segmentation, colour-based tracking, etc. There are numerous ways to detect and determine the colours of an image using different techniques. Our approach is performed in Python and uses OpenCV module and is defined below.
 
-# Approach
+## Approach
 1.	load_as_double(filepath)
 This function takes in the file path of the image and reads it in BGR format which is the default reading format. It changes the format of image to RGB and gray. It’s important to store colour information of the image to detect colours and hence it is stored in RGB format. Also, RGB format is one of the most common formats used. This function also changes the format of loaded image to gray so that other functions in OpenCV library can process image effortlessly. The gray image is then converted into float data type. This is done to include double precision in the image that provides a greater range of values and more accurate calculations. The function returns the image in RGB format and double of grey image.
 
@@ -37,7 +36,7 @@ This function simply maps the square coordinates to their respective positions i
 This function simply uses the colour information of image to find mean of RGB values of pixels of squares. These mean values are used to detect presence of certain colours. It then returns a nested list of size (4,4) containing colour strings.
 
 
-# Results
+## Results
 | Filename | Output | Success | Notes |
 | --- | --- | --- | --- |
 | org\_1.png | [['yellow', 'white', 'blue', 'red'], ['white', 'green', 'yellow', 'white'], ['green', 'blue', 'red', 'red'],['yellow', 'yellow', 'yellow', 'blue']] | Yes | Detected 16/16 squares correctly |
@@ -53,9 +52,9 @@ This function simply uses the colour information of image to find mean of RGB va
 
 From the above results, we can see that 7 out of 10 images are detected successfully. Therefore, the success rate of the algorithm is 70%, given that a success is when the algorithm detects all squares correctly. Also, going by the number of squares that are detected correctly, the detection rate of the algorithm is 90%.
 
-# Evaluation & Analysis
+## Evaluation & Analysis
 The algorithm fails to detect some squares when images are too noisy. To solve this problem, we can create a general solution for all images that extracts coordinates of squares from the ideal (no noise) image and uses those coordinates to detect squares in other images. This way noisy images won’t be depended on their contours. 
 For real photos, we can take advantage of the white background and use the objects with white background only. This can be done by thresholding the image. Also, real images will require a lot of noise removal which can be done by Gaussian blur method. It will also require undistorting the skewed images. Some images are quite already blurred so they may also need to be sharpened. Each image is quite different from each other, hence would require human intervention for appropriate results.
 
-# Conclusion
+## Conclusion
 In conclusion, we have performed thorough analysis with code in Python to detect colours from the images provided.
